@@ -26,12 +26,13 @@ describe('Test suite', function(){
         roomsPageFunctions.performLogout(cy, 'Login')
     })
 
-    it.only('Create room', function(){
+    it('Create room', function(){
         let fakerRoomType = faker.random.arrayElement(["Single","Double","Twin"])
         let fakerRoomNumber = faker.random.number({min:200, max:500})
         let fakerFloorNumber = faker.random.number({min:2, max:5})
         let fakerPrice = faker.random.number({min:500, max:1499})
         let fakerFeature = faker.random.arrayElement(["Balcony", "Ensuite", "Sea View", "Penthouse"])
+        
         indexFuncs.performValidLogin(cy, targets.username, targets.password, 'Tester Hotel Overview')
         dashBoardFuncs.viewRooms(cy, 'Rooms')
         roomsPageFunctions.createRoom(cy)
