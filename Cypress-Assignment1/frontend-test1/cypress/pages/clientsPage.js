@@ -2,17 +2,15 @@
 
 // Elements
 
-const titleOfRoomsPage = 'Testers Hotel'
+const titleOfClientsPage = 'Testers Hotel'
 const logoutButton = 'button.btn'
-const createRoomButton = 'a.btn:nth-child(2)'
+const createClientButton = 'a.btn:nth-child(2)'
 const goBackButton = 'a.btn:nth-child(1)'
-
-//const viewRoomButton = ':nth-child(1) > .btn'
 
 // Actions/Functions
 
-function checkTitleOfRoomsPage(cy){
-    cy.title().should('eq', titleOfRoomsPage)
+function checkTitleOfClientsPage(cy){
+    cy.title().should('eq', titleOfClientsPage)
 }
 
 function performLogout(cy, contentToConfirm){
@@ -25,17 +23,17 @@ function performGoBack(cy){
     cy.contains('Tester Hotel Overview')
 }
 
-function createRoom(cy){
-    cy.get(createRoomButton).click()
-    cy.contains('New Room')
+function createClient(cy){
+    cy.get(createClientButton).click()
+    cy.contains('New Client')
 }
 
 
 // Exports
 
 module.exports = {
-    checkTitleOfRoomsPage,
+    checkTitleOfClientsPage,
     performLogout,
     performGoBack,
-    createRoom,
+    createClient,
 }

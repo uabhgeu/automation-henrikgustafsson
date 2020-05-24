@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2020-05-23T11:13:03.573Z",
-    "end": "2020-05-23T11:13:06.948Z",
-    "duration": 3375,
+    "start": "2020-05-24T09:48:07.852Z",
+    "end": "2020-05-24T09:48:11.360Z",
+    "duration": 3508,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "66ea99c4-12a4-4077-afe8-3abe9cdc4752",
+      "uuid": "10763cfe-85aa-416e-8716-71c4c54419d9",
       "title": "",
       "fullFile": "cypress/integration/visual-regression.spec.js",
       "file": "cypress/integration/visual-regression.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a39ffe4d-ba52-49ca-b863-c399c976ac43",
+          "uuid": "5946371a-6da6-4e46-b7e9-520dc1cebfac",
           "title": "Regression test suite",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Perform valid login tc",
               "fullTitle": "Regression test suite Perform valid login tc",
               "timedOut": null,
-              "duration": 2149,
+              "duration": 2235,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "// Open the login page\ncy.visit('http://localhost:3000');\ncy.title().should('include', 'Testers Hotel');\ncy.contains('Login');\ncy.percySnapshot('login-page'); // Fill in the login information\ncy.get('div.field:nth-child(1) > input:nth-child(2)').type('tester01');\ncy.get('div.field:nth-child(2) > input:nth-child(2)').type('GteteqbQQgSr88SwNExUQv2ydb7xuf8c');\ncy.get('.btn').click(); // Open dash\ncy.contains('Tester Hotel Overview');\ncy.percySnapshot('dash-page'); // Clock logout\ncy.get('.user > .btn').click();\ncy.title().should('include', 'Testers Hotel');\ncy.contains('Login');",
               "err": {},
-              "uuid": "e72ab35a-5733-4e97-ad6c-dc8bb5bdb3b3",
-              "parentUUID": "a39ffe4d-ba52-49ca-b863-c399c976ac43",
+              "uuid": "dd7ee0e3-e751-45c7-ab72-843c7cffed32",
+              "parentUUID": "5946371a-6da6-4e46-b7e9-520dc1cebfac",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e72ab35a-5733-4e97-ad6c-dc8bb5bdb3b3"
+            "dd7ee0e3-e751-45c7-ab72-843c7cffed32"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2149,
+          "duration": 2235,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

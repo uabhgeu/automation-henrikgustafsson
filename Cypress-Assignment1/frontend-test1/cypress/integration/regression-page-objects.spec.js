@@ -6,8 +6,10 @@ import * as dashBoardFuncs from '../pages/dashboardPage'
 import * as targets from '../targets/targets'
 import * as roomsPageFunctions from '../pages/roomsPage'
 import * as createRoomFunction from '../pages/createRoomsPage'
+import * as clientsPageFunctions from '../pages/clientsPage'
+import * as createClientsPageFunctions from '../pages/createClientsPage'
 
-describe('Test suite', function(){
+describe('Test suite with page objects', function(){
 
     this.beforeEach(()=>{
         cy.visit(targets.base_url)
@@ -39,6 +41,26 @@ describe('Test suite', function(){
         createRoomFunction.createRoom(cy, fakerRoomType, fakerRoomNumber, fakerFloorNumber, fakerPrice, fakerFeature)
         createRoomFunction.saveRoom(cy, fakerRoomNumber)
         roomsPageFunctions.performLogout(cy, 'Login')
+    })
+
+    it('View clients', function(){
+        indexFuncs.performValidLogin(cy, targets.username, targets.password, 'Tester Hotel Overview')
+        dashBoardFuncs.viewClient(cy, 'Clients')
+        clientsPageFunctions.performLogout(cy, 'Login')
+    })
+
+    it('Create client', function(){
+        let fakerClientName = faker.name.findName()
+        let fakerEmail = faker.internet.email()
+        let fakerTelephoneNumber = faker.phone.phoneNumber()
+
+        indexFuncs.performValidLogin(cy, targets.username, targets.password, 'Tester Hotel Overview')
+        dashBoardFuncs.viewClient(cy, 'Clients')
+        clientsPageFunctions.checkTitleOfClientsPage(cy, 'Tester Hotel Overview')
+        clientsPageFunctions.createClient(cy)
+        createClientsPageFunctions.createClient(cy, fakerClientName, fakerEmail, fakerTelephoneNumber)
+        createClientsPageFunctions.saveClient(cy, fakerClientName, fakerEmail, fakerTelephoneNumber)
+        clientsPageFunctions.performLogout(cy, 'Login')
     })
 
 })
