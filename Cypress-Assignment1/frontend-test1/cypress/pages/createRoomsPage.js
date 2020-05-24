@@ -17,20 +17,24 @@ const featureSelector = ':nth-child(6) > select'
 
 // Actions/Functions
 
+// Assert right page
 function checkTitleOfCreateRoomsPage(cy){
     cy.title().should('eq', titleOfCreateRoomsPage)
 }
 
+// Logout and assert
 function performLogout(cy, contentToConfirm){
     cy.get(logoutButton).click()
     cy.contains(contentToConfirm)
 }
 
+// Go back and assert
 function performGoBack(cy){
     cy.get(goBackButton).click()
     cy.contains('Rooms')
 }
 
+// Create room
 function createRoom(cy, roomType, roomNumber, floor, price, feature){
     cy.get(roomTypeSelector).select(roomType)
     cy.get(numberTextfield).type(roomNumber)
@@ -40,6 +44,7 @@ function createRoom(cy, roomType, roomNumber, floor, price, feature){
     cy.get(featureSelector).select(feature)
 }
 
+// Save room and assert
 function saveRoom(cy, roomNumber, price){
     cy.get(saveRoomButton).click()
     cy.contains(roomNumber)

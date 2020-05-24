@@ -10,20 +10,24 @@ const viewClientButton = ':nth-child(2) > a:nth-child(3)'
 
 // Actions/Functions
 
+// Assert right page
 function checkTitleOfDashboardPage(cy){
     cy.title().should('eq', titleOfDasboardPage)
 }
 
+// View rooms and assert
 function viewRooms(cy, contentToConfirm){
     cy.get(viewRoomButton).click()
     cy.contains(contentToConfirm)
 }
 
+// View client and assert
 function viewClient(cy, contentToConfirm){
     cy.get(viewClientButton).click()
     cy.contains(contentToConfirm)
 }
 
+// Logout and assert
 function performLogout(cy, contentToConfirm){
     cy.get(logoutButton).click()
     cy.contains(contentToConfirm)

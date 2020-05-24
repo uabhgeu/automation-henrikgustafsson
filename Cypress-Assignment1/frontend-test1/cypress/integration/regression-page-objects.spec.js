@@ -16,18 +16,20 @@ describe('Test suite with page objects', function(){
         indexFuncs.checkTitleOfIndexPage(cy)
     })
 
-    // Test case
+    // Test case. Test login and logout function
     it('Perform login and logout', function(){
         indexFuncs.performValidLogin(cy, targets.username, targets.password, 'Tester Hotel Overview')
         dashBoardFuncs.performLogout(cy, 'Login')
     })
 
+    // Test. View rooms
     it('View rooms', function(){
         indexFuncs.performValidLogin(cy, targets.username, targets.password, 'Tester Hotel Overview')
         dashBoardFuncs.viewRooms(cy, 'Rooms')
         roomsPageFunctions.performLogout(cy, 'Login')
     })
 
+    // Test create room, using faker
     it('Create room', function(){
         let fakerRoomType = faker.random.arrayElement(["Single","Double","Twin"])
         let fakerRoomNumber = faker.random.number({min:200, max:500})
@@ -43,12 +45,14 @@ describe('Test suite with page objects', function(){
         roomsPageFunctions.performLogout(cy, 'Login')
     })
 
+    // Test view clients
     it('View clients', function(){
         indexFuncs.performValidLogin(cy, targets.username, targets.password, 'Tester Hotel Overview')
         dashBoardFuncs.viewClient(cy, 'Clients')
         clientsPageFunctions.performLogout(cy, 'Login')
     })
 
+    // Test create client
     it('Create client', function(){
         let fakerClientName = faker.name.findName()
         let fakerEmail = faker.internet.email()

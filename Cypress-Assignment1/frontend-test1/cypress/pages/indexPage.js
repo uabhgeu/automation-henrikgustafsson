@@ -9,10 +9,12 @@ const loginButton = '.btn'
 
 // Actions/Functions
 
+// Assert right page
 function checkTitleOfIndexPage(cy){
     cy.title().should('eq', titleOfIndexPage)
 }
 
+// Login and assert
 function performValidLogin(cy, username, password, contentToConfirm){
     cy.get(usernameTextfield).type(username)
     cy.get(passwordTextfield).type(password)

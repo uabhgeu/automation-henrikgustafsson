@@ -59,15 +59,5 @@ describe('Regression test suite', function(){
             cy.get('[value="penthouse"]').click()
         cy.get('a.btn:nth-child(2)').click()
 
-        
-        
-
-        //div.field:nth-child(3) > input:nth-child(2)
-        
-
-        // logout
-        //cy.get('.user > .btn').click()
-        //cy.title().should('include', 'Testers Hotel')
-        //cy.contains('Login')
     });
 });
